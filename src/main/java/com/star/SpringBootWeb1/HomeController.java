@@ -1,12 +1,15 @@
 package com.star.SpringBootWeb1;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
 
+    @RequestMapping("/home")
     public String home() {
-        System.out.println("home method calld");
+        System.out.println("home method called");
         return "index.jsp";
     }
 }
