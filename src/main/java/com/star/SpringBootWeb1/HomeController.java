@@ -19,11 +19,14 @@ public class HomeController {
     @RequestMapping("/Add")
     public String add(HttpServletRequest req, HttpSession session) {
 
+        //But we can still simplify this code..
        int num1 = Integer.parseInt(req.getParameter("num1"));
        int num2 = Integer.parseInt(req.getParameter("num2"));
        int result = num1 + num2;
 
        session.setAttribute("Answer", result);
+
+
 
 //        System.out.println(result);
 
