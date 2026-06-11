@@ -2,6 +2,7 @@ package com.star.SpringBootWeb1;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,13 +17,16 @@ public class HomeController {
     }
 
     @RequestMapping("/Add")
-    public String add(HttpServletRequest req) {
+    public String add(HttpServletRequest req, HttpSession session) {
 
        int num1 = Integer.parseInt(req.getParameter("num1"));
        int num2 = Integer.parseInt(req.getParameter("num2"));
        int result = num1 + num2;
 
-        System.out.println(result);
+       session.setAttribute("Answer", result);
+
+//        System.out.println(result);
+
 //        System.out.println("in add");
 
         return "result.jsp";
