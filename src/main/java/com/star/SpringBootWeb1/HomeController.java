@@ -15,7 +15,7 @@ public class HomeController {
     @RequestMapping("/home")
     public String home() {
         System.out.println("home method called");
-        return "index.jsp";
+        return "index";
     }
 
     @RequestMapping("/Add")
@@ -36,7 +36,7 @@ public class HomeController {
 
 //        System.out.println("in add");
 
-        return "result.jsp";
+        return "result";
     }
 
 }
