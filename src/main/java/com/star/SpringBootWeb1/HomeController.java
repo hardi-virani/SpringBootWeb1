@@ -14,9 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
     @RequestMapping("/home")
-    public String home() {
+    public ModelAndView home(ModelAndView mv) {
+        mv.setViewName("index");
         System.out.println("home method called");
-        return "index";
+        return mv;
     }
 
     @RequestMapping("/Add")
