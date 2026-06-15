@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,17 +46,10 @@ public class HomeController {
     }
 
     @RequestMapping("/AddAlien")
-    public ModelAndView AddAlien(@RequestParam("aid") int aid, @RequestParam("aname") String aname, ModelAndView mv) {
-
-        Alien alien = new Alien();
-        alien.setAid(aid);
-        alien.setAname(aname);
-
-        mv.addObject("alien", alien);
-        mv.setViewName("result");
+    public String AddAlien(Alien alien) {
 
 
-        return mv;
+        return "result";
     }
 
 
