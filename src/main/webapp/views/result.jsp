@@ -14,6 +14,7 @@
 
 <h2> Welcome to star world </h2> <br>
 <p> ${alien}</p>
+<p> ${course}</p>
 
 
 

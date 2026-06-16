@@ -14,6 +14,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
+    @ModelAttribute("course")
+    public String courseName() {
+        return "java";
+    }
+
     @RequestMapping("/home")
     public ModelAndView home(ModelAndView mv) {
         mv.setViewName("index");
